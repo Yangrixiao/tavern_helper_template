@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* 功能语义配色 — 洛圣都绯金夜色 × 合欢宗桃花仙韵 */
+  --c-surface-base: #120d17;
+  --c-surface-elevated: #1c1324;
+  --c-surface-card: #24182e;
+  --c-surface-glass: rgba(40, 24, 52, 0.82);
+  --c-surface-highlight: rgba(255, 59, 125, 0.12);
+
+  --c-primary: #ff3b7d;
+  --c-primary-hover: #ff5c94;
+  --c-primary-soft: rgba(255, 59, 125, 0.2);
+
+  --c-accent-gold: #f5b942;
+  --c-accent-gold-soft: rgba(245, 185, 66, 0.18);
+
+  --c-stamina-healthy: #2ee59d;
+  --c-stamina-warning: #f59e0b;
+  --c-danger: #ff2a55;
+  --c-danger-soft: rgba(255, 42, 85, 0.2);
+
+  --c-spirit: #b589ff;
+  --c-spirit-soft: rgba(181, 137, 255, 0.18);
+
+  --c-text-primary: #fdf4f8;
+  --c-text-secondary: #dec8d6;
+  --c-text-muted: #987f90;
+
+  --c-border: rgba(255, 94, 148, 0.26);
+  --c-border-subtle: rgba(255, 255, 255, 0.08);
+  --c-border-strong: rgba(245, 185, 66, 0.65);
+
+  --font-sans: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Songti SC', 'STSong', 'SimSun', serif;
+  --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+}
+
+body {
+  background: transparent;
+  color: var(--c-text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
