@@ -1,0 +1,231 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "世界": {
+      "type": "object",
+      "properties": {
+        "当前时间": {
+          "type": "string"
+        },
+        "当前区域": {
+          "type": "string",
+          "enum": [
+            "市中心",
+            "富人山庄区",
+            "好麦坞",
+            "威尼斯海滩",
+            "中产社区",
+            "贫民区",
+            "夜店一条街",
+            "国际机场与交通动脉"
+          ]
+        },
+        "当前具体地点": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "当前时间",
+        "当前区域",
+        "当前具体地点"
+      ]
+    },
+    "主角": {
+      "type": "object",
+      "properties": {
+        "体力": {
+          "type": "number"
+        },
+        "体力上限": {
+          "type": "number"
+        },
+        "金钱": {
+          "type": "number"
+        },
+        "合欢点": {
+          "type": "number"
+        },
+        "猎艳积分": {
+          "type": "number"
+        },
+        "已解锁最高任务星级": {
+          "type": "string",
+          "enum": [
+            "2星",
+            "3星",
+            "4星",
+            "5星"
+          ]
+        },
+        "商城道具栏": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "道具名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "分类": {
+                "type": "string"
+              },
+              "数量": {
+                "type": "number"
+              },
+              "效果简述": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "分类",
+              "数量",
+              "效果简述"
+            ]
+          }
+        }
+      },
+      "required": [
+        "体力",
+        "体力上限",
+        "金钱",
+        "合欢点",
+        "猎艳积分",
+        "已解锁最高任务星级",
+        "商城道具栏"
+      ]
+    },
+    "柳三娘": {
+      "type": "object",
+      "properties": {
+        "当前形态": {
+          "type": "string",
+          "enum": [
+            "神识伴随态",
+            "隐身作祟态",
+            "本尊具象化态"
+          ]
+        },
+        "具象化剩余小时": {
+          "type": "number"
+        },
+        "具象化可见性": {
+          "type": "string",
+          "enum": [
+            "未具象化",
+            "仅男主可见",
+            "对他人可见"
+          ]
+        },
+        "当前发骚状态": {
+          "type": "string"
+        },
+        "最新骚话点评": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "当前形态",
+        "具象化剩余小时",
+        "具象化可见性",
+        "当前发骚状态",
+        "最新骚话点评"
+      ]
+    },
+    "任务面板": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "description": "任务名称"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "类型": {
+            "type": "string"
+          },
+          "星级": {
+            "type": "string"
+          },
+          "目标与舞台": {
+            "type": "string"
+          },
+          "基础色情指标": {
+            "type": "string"
+          },
+          "进阶挑战词条": {
+            "type": "string"
+          },
+          "基础赏金": {
+            "type": "string"
+          },
+          "状态": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "类型",
+          "星级",
+          "目标与舞台",
+          "基础色情指标",
+          "进阶挑战词条",
+          "基础赏金",
+          "状态"
+        ]
+      }
+    },
+    "猎物图鉴": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "description": "女性姓名"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "综合评级": {
+            "type": "string"
+          },
+          "年龄与人种": {
+            "type": "string"
+          },
+          "身份与背德标签": {
+            "type": "string"
+          },
+          "身材流派与三围": {
+            "type": "string"
+          },
+          "私密微观特征": {
+            "type": "string"
+          },
+          "名器与品级倍率": {
+            "type": "string"
+          },
+          "性经验与开发度": {
+            "type": "string"
+          },
+          "当前状态与关系": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "综合评级",
+          "年龄与人种",
+          "身份与背德标签",
+          "身材流派与三围",
+          "私密微观特征",
+          "名器与品级倍率",
+          "性经验与开发度",
+          "当前状态与关系"
+        ]
+      }
+    }
+  },
+  "required": [
+    "世界",
+    "主角",
+    "柳三娘",
+    "任务面板",
+    "猎物图鉴"
+  ]
+}
