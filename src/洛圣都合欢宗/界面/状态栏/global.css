@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* 功能语义色彩变量：洛圣都暗夜霓虹 × 合欢宗绯红鎏金 */
+  --c-bg-base: #0d0814;
+  --c-surface: #170f24;
+  --c-surface-elevated: #221636;
+  --c-surface-hover: #2c1d45;
+  --c-primary: #ff3b8b;
+  --c-primary-soft: rgba(255, 59, 139, 0.16);
+  --c-accent-gold: #f5b942;
+  --c-accent-gold-soft: rgba(245, 185, 66, 0.16);
+  --c-cash: #2ee59d;
+  --c-cash-soft: rgba(46, 229, 157, 0.15);
+  --c-stamina: #38b6ff;
+  --c-danger: #ff2a55;
+  --c-danger-soft: rgba(255, 42, 85, 0.18);
+  --c-text-main: #f8f0fc;
+  --c-text-secondary: #d5c2e8;
+  --c-text-muted: #9b84b3;
+  --c-border: #36224f;
+  --c-border-highlight: rgba(255, 59, 139, 0.5);
+  --c-border-gold: rgba(245, 185, 66, 0.45);
+
+  /* 字体栈 */
+  --font-main: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+}
+
+body {
+  background: transparent;
+  color: var(--c-text-main);
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+}

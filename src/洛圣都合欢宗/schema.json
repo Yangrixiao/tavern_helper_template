@@ -1,0 +1,264 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "世界": {
+      "type": "object",
+      "properties": {
+        "当前日期": {
+          "type": "string"
+        },
+        "当前时段": {
+          "type": "string"
+        },
+        "当前区域": {
+          "type": "string",
+          "enum": [
+            "富人山庄区",
+            "商业金融区",
+            "网红海滩区",
+            "夜店娱乐区",
+            "中产社区",
+            "底层街区"
+          ]
+        },
+        "当前场景": {
+          "type": "string"
+        },
+        "性爱分幕进度": {
+          "type": "string",
+          "enum": [
+            "日常探索",
+            "前戏挑逗态",
+            "慢磨缠绵态",
+            "狂桩暴肏态",
+            "高潮灌精态",
+            "余韵复燃态"
+          ]
+        }
+      },
+      "required": [
+        "当前日期",
+        "当前时段",
+        "当前区域",
+        "当前场景",
+        "性爱分幕进度"
+      ]
+    },
+    "主角": {
+      "type": "object",
+      "properties": {
+        "现金": {
+          "type": "number"
+        },
+        "合欢点": {
+          "type": "number"
+        },
+        "体力": {
+          "type": "number"
+        },
+        "已习得秘术与改造": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "词条名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "类别": {
+                "type": "string"
+              },
+              "效果描述": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "类别",
+              "效果描述"
+            ]
+          }
+        },
+        "随身淫具与丹药": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "道具名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "数量": {
+                "type": "number"
+              },
+              "效果描述": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "数量",
+              "效果描述"
+            ]
+          }
+        }
+      },
+      "required": [
+        "现金",
+        "合欢点",
+        "体力",
+        "已习得秘术与改造",
+        "随身淫具与丹药"
+      ]
+    },
+    "柳三娘": {
+      "type": "object",
+      "properties": {
+        "当前形态": {
+          "type": "string",
+          "enum": [
+            "识海残魂",
+            "实体具象·对外隐形",
+            "实体具象·外人可见"
+          ]
+        },
+        "剩余具象时长": {
+          "type": "number"
+        },
+        "当前魂衣穿搭": {
+          "type": "string"
+        },
+        "淫乱兴奋度": {
+          "type": "number"
+        },
+        "实时骚话吐槽": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "当前形态",
+        "剩余具象时长",
+        "当前魂衣穿搭",
+        "淫乱兴奋度",
+        "实时骚话吐槽"
+      ]
+    },
+    "合欢宗系统": {
+      "type": "object",
+      "properties": {
+        "当前任务": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "任务名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "类型": {
+                "type": "string"
+              },
+              "下流要求": {
+                "type": "string"
+              },
+              "美金奖励": {
+                "type": "number"
+              },
+              "额外奖励": {
+                "type": "string"
+              },
+              "进度状态": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "类型",
+              "下流要求",
+              "美金奖励",
+              "额外奖励",
+              "进度状态"
+            ]
+          }
+        },
+        "当期商城货架": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "description": "商品名"
+          },
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "分类": {
+                "type": "string"
+              },
+              "价格合欢点": {
+                "type": "number"
+              },
+              "色情效果": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "分类",
+              "价格合欢点",
+              "色情效果"
+            ]
+          }
+        }
+      },
+      "required": [
+        "当前任务",
+        "当期商城货架"
+      ]
+    },
+    "炉鼎名册": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "description": "姓名"
+      },
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "评级": {
+            "type": "string"
+          },
+          "身份与外貌简述": {
+            "type": "string"
+          },
+          "专属名器": {
+            "type": "string"
+          },
+          "恶堕阶段": {
+            "type": "string"
+          },
+          "合欢淫印": {
+            "type": "boolean"
+          },
+          "累计采补次数": {
+            "type": "number"
+          },
+          "当前状态与调教指令": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "评级",
+          "身份与外貌简述",
+          "专属名器",
+          "恶堕阶段",
+          "合欢淫印",
+          "累计采补次数",
+          "当前状态与调教指令"
+        ]
+      }
+    }
+  },
+  "required": [
+    "世界",
+    "主角",
+    "柳三娘",
+    "合欢宗系统",
+    "炉鼎名册"
+  ]
+}
