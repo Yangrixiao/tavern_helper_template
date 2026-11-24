@@ -7,7 +7,7 @@ const Count = (fallback = 0) => z.coerce.number().catch(fallback);
 
 /** 对象节点：缺字段补默认值，整块写坏时回退到「全默认对象」。 */
 function Obj<T extends z.ZodRawShape>(shape: T) {
-  const base = z.looseObject(shape).prefault({});
+  const base = z.looseObject(shape);
   const fallback = base.parse({});
   return base.catch(fallback);
 }
