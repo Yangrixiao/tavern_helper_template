@@ -1,0 +1,451 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "default": {
+    "世界": {
+      "当前区域": "国际机场与交通动脉",
+      "当前具体地点": "",
+      "当前时间": {
+        "天数": 1,
+        "星期": "",
+        "时段": "",
+        "钟点": "00:00"
+      }
+    },
+    "主角": {
+      "体力": 100,
+      "体力上限": 100,
+      "合欢点": 0,
+      "金钱": 0,
+      "商城道具栏": {}
+    },
+    "柳三娘": {
+      "当前形态": "神识伴随态",
+      "具象化可见性": "仅主角可见",
+      "具象化剩余小时": 0,
+      "目击风险": 0,
+      "目击记录": "无",
+      "最新骚话点评": "",
+      "当前发骚状态": ""
+    },
+    "任务面板": {},
+    "猎物图鉴": {},
+    "商城货架": {}
+  },
+  "type": "object",
+  "properties": {
+    "世界": {
+      "default": {
+        "当前区域": "国际机场与交通动脉",
+        "当前具体地点": "",
+        "当前时间": {
+          "天数": 1,
+          "星期": "",
+          "时段": "",
+          "钟点": "00:00"
+        }
+      },
+      "type": "object",
+      "properties": {
+        "当前区域": {
+          "default": "国际机场与交通动脉",
+          "type": "string"
+        },
+        "当前具体地点": {
+          "default": "",
+          "type": "string"
+        },
+        "当前时间": {
+          "default": {
+            "天数": 1,
+            "星期": "",
+            "时段": "",
+            "钟点": "00:00"
+          },
+          "type": "object",
+          "properties": {
+            "天数": {
+              "default": 1,
+              "type": "number"
+            },
+            "星期": {
+              "default": "",
+              "type": "string"
+            },
+            "时段": {
+              "default": "",
+              "type": "string"
+            },
+            "钟点": {
+              "default": "00:00",
+              "type": "string"
+            }
+          },
+          "required": [
+            "天数",
+            "星期",
+            "时段",
+            "钟点"
+          ],
+          "additionalProperties": {}
+        }
+      },
+      "required": [
+        "当前区域",
+        "当前具体地点"
+      ],
+      "additionalProperties": {}
+    },
+    "主角": {
+      "default": {
+        "体力": 100,
+        "体力上限": 100,
+        "合欢点": 0,
+        "金钱": 0,
+        "商城道具栏": {}
+      },
+      "type": "object",
+      "properties": {
+        "体力": {
+          "default": 100,
+          "type": "number"
+        },
+        "体力上限": {
+          "default": 100,
+          "type": "number"
+        },
+        "合欢点": {
+          "default": 0,
+          "type": "number"
+        },
+        "金钱": {
+          "default": 0,
+          "type": "number"
+        },
+        "商城道具栏": {
+          "default": {},
+          "type": "object",
+          "propertyNames": {
+            "type": "string"
+          },
+          "additionalProperties": {
+            "default": {
+              "分类": "",
+              "数量": 1,
+              "效果简述": ""
+            },
+            "type": "object",
+            "properties": {
+              "分类": {
+                "default": "",
+                "type": "string"
+              },
+              "数量": {
+                "default": 1,
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "default": 1,
+                    "type": "number"
+                  }
+                ]
+              },
+              "效果简述": {
+                "default": "",
+                "type": "string"
+              }
+            },
+            "required": [
+              "分类",
+              "效果简述"
+            ],
+            "additionalProperties": {}
+          }
+        }
+      },
+      "required": [
+        "体力",
+        "体力上限",
+        "合欢点",
+        "金钱",
+        "商城道具栏"
+      ],
+      "additionalProperties": {}
+    },
+    "柳三娘": {
+      "default": {
+        "当前形态": "神识伴随态",
+        "具象化可见性": "仅主角可见",
+        "具象化剩余小时": 0,
+        "目击风险": 0,
+        "目击记录": "无",
+        "最新骚话点评": "",
+        "当前发骚状态": ""
+      },
+      "type": "object",
+      "properties": {
+        "当前形态": {
+          "default": "神识伴随态",
+          "type": "string",
+          "enum": [
+            "神识伴随态",
+            "隐身作祟态",
+            "本尊具象化态"
+          ]
+        },
+        "具象化可见性": {
+          "default": "仅主角可见",
+          "type": "string",
+          "enum": [
+            "仅主角可见",
+            "对他人可见"
+          ]
+        },
+        "具象化剩余小时": {
+          "default": 0,
+          "type": "number"
+        },
+        "目击风险": {
+          "default": 0,
+          "type": "number"
+        },
+        "目击记录": {
+          "default": "无",
+          "type": "string"
+        },
+        "最新骚话点评": {
+          "default": "",
+          "type": "string"
+        },
+        "当前发骚状态": {
+          "default": "",
+          "type": "string"
+        }
+      },
+      "required": [
+        "当前形态",
+        "具象化可见性",
+        "具象化剩余小时",
+        "目击风险",
+        "目击记录",
+        "最新骚话点评",
+        "当前发骚状态"
+      ],
+      "additionalProperties": {}
+    },
+    "任务面板": {
+      "default": {},
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {
+        "default": {
+          "星级": "1星",
+          "类型": "",
+          "母题坐标": "",
+          "破壳路线": "",
+          "状态": "进行中",
+          "目标与舞台": "",
+          "基础色情指标": "",
+          "进阶挑战词条": "",
+          "基础赏金": ""
+        },
+        "type": "object",
+        "properties": {
+          "星级": {
+            "default": "1星",
+            "type": "string"
+          },
+          "类型": {
+            "default": "",
+            "type": "string"
+          },
+          "母题坐标": {
+            "default": "",
+            "type": "string"
+          },
+          "破壳路线": {
+            "default": "",
+            "type": "string"
+          },
+          "状态": {
+            "default": "进行中",
+            "type": "string"
+          },
+          "目标与舞台": {
+            "default": "",
+            "type": "string"
+          },
+          "基础色情指标": {
+            "default": "",
+            "type": "string"
+          },
+          "进阶挑战词条": {
+            "default": "",
+            "type": "string"
+          },
+          "基础赏金": {
+            "default": "",
+            "type": "string"
+          }
+        },
+        "required": [
+          "星级",
+          "类型",
+          "母题坐标",
+          "破壳路线",
+          "状态",
+          "目标与舞台",
+          "基础色情指标",
+          "进阶挑战词条",
+          "基础赏金"
+        ],
+        "additionalProperties": {}
+      }
+    },
+    "猎物图鉴": {
+      "default": {},
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {
+        "default": {
+          "综合评级": "C级",
+          "好感": 0,
+          "堕落": 0,
+          "年龄": "",
+          "人种": "",
+          "身份与背德标签": "",
+          "身材流派与三围": "",
+          "私密微观特征": "",
+          "名器与品级倍率": "",
+          "性经验与开发度": "",
+          "弱点与破防线": "",
+          "当前状态与关系": ""
+        },
+        "type": "object",
+        "properties": {
+          "综合评级": {
+            "default": "C级",
+            "type": "string"
+          },
+          "好感": {
+            "default": 0,
+            "type": "number"
+          },
+          "堕落": {
+            "default": 0,
+            "type": "number"
+          },
+          "年龄": {
+            "default": "",
+            "type": "string"
+          },
+          "人种": {
+            "default": "",
+            "type": "string"
+          },
+          "身份与背德标签": {
+            "default": "",
+            "type": "string"
+          },
+          "身材流派与三围": {
+            "default": "",
+            "type": "string"
+          },
+          "私密微观特征": {
+            "default": "",
+            "type": "string"
+          },
+          "名器与品级倍率": {
+            "default": "",
+            "type": "string"
+          },
+          "性经验与开发度": {
+            "default": "",
+            "type": "string"
+          },
+          "弱点与破防线": {
+            "default": "",
+            "type": "string"
+          },
+          "当前状态与关系": {
+            "default": "",
+            "type": "string"
+          }
+        },
+        "required": [
+          "综合评级",
+          "好感",
+          "堕落",
+          "年龄",
+          "人种",
+          "身份与背德标签",
+          "身材流派与三围",
+          "私密微观特征",
+          "名器与品级倍率",
+          "性经验与开发度",
+          "弱点与破防线",
+          "当前状态与关系"
+        ],
+        "additionalProperties": {}
+      }
+    },
+    "商城货架": {
+      "default": {},
+      "type": "object",
+      "propertyNames": {
+        "type": "string"
+      },
+      "additionalProperties": {
+        "default": {
+          "分类": "",
+          "价格": "",
+          "效果简述": "",
+          "来源": "常驻",
+          "绑定任务": ""
+        },
+        "type": "object",
+        "properties": {
+          "分类": {
+            "default": "",
+            "type": "string"
+          },
+          "价格": {
+            "default": "",
+            "type": "string"
+          },
+          "效果简述": {
+            "default": "",
+            "type": "string"
+          },
+          "来源": {
+            "default": "常驻",
+            "type": "string"
+          },
+          "绑定任务": {
+            "default": "",
+            "type": "string"
+          }
+        },
+        "required": [
+          "分类",
+          "价格",
+          "效果简述",
+          "来源",
+          "绑定任务"
+        ],
+        "additionalProperties": {}
+      }
+    }
+  },
+  "required": [
+    "任务面板",
+    "猎物图鉴",
+    "商城货架"
+  ],
+  "additionalProperties": {}
+}
