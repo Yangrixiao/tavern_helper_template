@@ -1,15 +1,23 @@
 /**
  * 《合欢宗-洛圣都猎艳》改版变量结构（对齐 [initvar]状态初值 / [mvu_update]状态更新规则）。
- * 所有字段都带 catch/prefault 兜底：变量缺失、类型漂移甚至整块被写坏时，界面仍能正常渲染。
+ * 所有字段都带 catch 兜底：变量缺失、类型漂移甚至整块被写坏时，界面仍能正常渲染。
  */
 const Text = (fallback = '') => z.string().catch(fallback);
 const Count = (fallback = 0) => z.coerce.number().catch(fallback);
 
+/** 宽松对象：优先用 zod4 的 looseObject；宿主注入 zod3 时退回 object().passthrough()。 */
+function LooseObject<T extends z.ZodRawShape>(shape: T) {
+  const loose = typeof (z as unknown as { looseObject?: unknown }).looseObject === 'function'
+    ? z.looseObject(shape)
+    : z.object(shape).passthrough();
+  return loose as z.ZodObject<T>;
+}
+
 /** 对象节点：缺字段补默认值，整块写坏时回退到「全默认对象」。 */
 function Obj<T extends z.ZodRawShape>(shape: T) {
-  const base = z.looseObject(shape);
+  const base = LooseObject(shape);
   const fallback = base.parse({});
-  return base.catch(fallback);
+  return base.catch(fallback) as z.ZodObject<T>;
 }
 
 export const Schema = Obj({
