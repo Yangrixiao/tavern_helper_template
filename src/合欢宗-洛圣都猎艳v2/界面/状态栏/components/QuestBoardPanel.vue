@@ -41,12 +41,20 @@
         </div>
 
         <div class="quest-body">
-          <div v-if="quest.母题坐标" class="quest-row motif-row">
+          <div v-if="quest.事件类型 || quest.母题坐标" class="quest-row motif-row">
             <div class="row-label">
               <i class="fa-solid fa-diagram-project"></i>
-              <span>母题坐标</span>
+              <span>事件类型</span>
             </div>
-            <p class="row-content motif-text">{{ quest.母题坐标 }}</p>
+            <p class="row-content motif-text">{{ quest.事件类型 || quest.母题坐标 }}</p>
+          </div>
+
+          <div v-if="quest.事件简介" class="quest-row brief-row">
+            <div class="row-label">
+              <i class="fa-solid fa-feather-pointed"></i>
+              <span>事件简介</span>
+            </div>
+            <p class="row-content brief-text">{{ quest.事件简介 }}</p>
           </div>
 
           <div v-if="quest.破壳路线" class="quest-row route-row">
@@ -308,6 +316,11 @@ function getStatusClass(status: string): string {
   border-left: 3px solid var(--c-spirit);
 }
 
+.brief-row {
+  background: rgba(255, 255, 255, 0.045);
+  border-left: 3px solid rgba(222, 200, 214, 0.45);
+}
+
 .route-row {
   background: rgba(245, 185, 66, 0.07);
   border-left: 3px solid rgba(245, 185, 66, 0.7);
@@ -356,6 +369,14 @@ function getStatusClass(status: string): string {
 
 .motif-text {
   color: #d8c6ff;
+}
+
+.brief-row .row-label {
+  color: #cbb8c6;
+}
+
+.brief-text {
+  color: #f0e2ea;
 }
 
 .route-text {

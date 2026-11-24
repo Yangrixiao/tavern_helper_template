@@ -65,7 +65,8 @@ export const Schema = Obj({
       Obj({
         星级: Text('1星'),
         类型: Text(),
-        母题坐标: Text(),
+        事件类型: Text(),
+        事件简介: Text(),
         破壳路线: Text(),
         状态: Text('进行中'),
         目标与舞台: Text(),
